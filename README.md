@@ -27,16 +27,16 @@ Things you may want to cover:
 
 ## users テーブル
 
-| Column          | Type   | Options     |
-| --------        | ------ | ----------- |
-| nickname        | string | null: false |
-| email           | string | null: false |
-| password        | string | null: false |
-| last_name       | string | null: false |
-| first_name      | string | null: false |
-| last_name_kana  | string | null: false |
-| first_name_kana | string | null: false |
-| birthday        | date   | null: false |
+| Column          | Type    | Options     |
+| --------        | ------- | ----------- |
+| nickname        | varchar | null: false |
+| email           | varchar | null: false |
+| password        | varchar | null: false |
+| last_name       | varchar | null: false |
+| first_name      | varchar | null: false |
+| last_name_kana  | varchar | null: false |
+| first_name_kana | varchar | null: false |
+| birthday        | date    | null: false |
 
 ### Association
 

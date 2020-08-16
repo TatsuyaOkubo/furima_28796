@@ -41,6 +41,7 @@ Things you may want to cover:
 ### Association
 
 - has_many :products
+- has_many :purchase
 
 ## products テーブル
 
@@ -60,3 +61,17 @@ Things you may want to cover:
 ### Association
 
 - belongs_to :user
+- has_one :purchase
+
+## purchase テーブル
+
+| Column     | Type    | Options     |
+| ---------- | ------- | ----------- |
+| user_id    | integer |             |
+| product_id | integer |             |
+
+### Association
+
+- belongs_to :user
+- belongs_to :product
+- has_one :delivery

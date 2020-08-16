@@ -75,3 +75,19 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :product
 - has_one :delivery
+
+## delivery テーブル
+
+| Column       | Type    | Options                        |
+| ------------ | ------- | ------------------------------ |
+| postcode     | string  | null: false                    |
+| prefecture   | integer | null: false                    |
+| city         | string  | null: false                    |
+| block        | string  | null: false                    |
+| building     | string  | null: false                    |
+| phone_number | integer | null: false                    |
+| purchase_id  | integer | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :purchase

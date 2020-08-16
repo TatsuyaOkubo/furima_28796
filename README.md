@@ -41,7 +41,6 @@ Things you may want to cover:
 ### Association
 
 - has_many :products
-- has_many :comments
 - has_one :purchase
 
 ## products テーブル
@@ -61,19 +60,5 @@ Things you may want to cover:
 
 ### Association
 
-- has_many :comments
 - has_one :purchase
 - belongs_to :user
-
-## comments テーブル
-
-| Column     | Type | Options     |
-| ---------- | ---- | ----------- |
-| message    | text | null: false |
-| user_id    | int  | null: false |
-| product_id | int  | null: false |
-
-### Association
-
-- belongs_to :user
-- belongs_to :product

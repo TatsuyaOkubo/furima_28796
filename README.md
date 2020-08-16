@@ -46,7 +46,7 @@ Things you may want to cover:
 
 | Column          | Type    | Options                        |
 | --------------- | ------- | ------------------------------ |
-| image           | text    | null: false                    |
+| image           | string  | null: false                    |
 | product_name    | string  | null: false                    |
 | description     | text    |                                |
 | category        | integer | null: false                    |

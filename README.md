@@ -56,8 +56,8 @@ Things you may want to cover:
 | shipping_charge | varchar | null: false |
 | shipping_area   | varchar | null: false |
 | shipping_days   | date    | null: false |
-| price           | int     | null: false |
-| user_id         | int     | null: false |
+| price           | integer | null: false |
+| user_id         | integer | null: false |
 
 ### Association
 

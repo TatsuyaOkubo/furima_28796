@@ -41,7 +41,6 @@ Things you may want to cover:
 ### Association
 
 - has_many :products
-- has_one :purchase
 
 ## products テーブル
 
@@ -60,5 +59,4 @@ Things you may want to cover:
 
 ### Association
 
-- has_one :purchase
 - belongs_to :user

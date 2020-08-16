@@ -65,10 +65,10 @@ Things you may want to cover:
 
 ## purchase テーブル
 
-| Column     | Type    | Options     |
-| ---------- | ------- | ----------- |
-| user_id    | integer |             |
-| product_id | integer |             |
+| Column     | Type    | Options                        |
+| ---------- | ------- | ------------------------------ |
+| user_id    | integer | null: false, foreign_key: true |
+| product_id | integer | null: false, foreign_key: true |
 
 ### Association
 

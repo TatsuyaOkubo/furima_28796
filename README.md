@@ -44,18 +44,18 @@ Things you may want to cover:
 
 ## products テーブル
 
-| Column          | Type    | Options     |
-| --------------- | ------- | ----------- |
-| image           | text    | null: false |
-| product_name    | string | null: false |
-| description     | text    | null: false |
-| category        | integer | null: false |
-| status          | integer | null: false |
-| shipping_charge | integer | null: false |
-| shipping_area   | integer | null: false |
-| shipping_days   | integer | null: false |
-| price           | integer | null: false |
-| user_id         | integer | null: false |
+| Column          | Type    | Options                        |
+| --------------- | ------- | ------------------------------ |
+| image           | text    | null: false                    |
+| product_name    | string  | null: false                    |
+| description     | text    |                                |
+| category        | integer | null: false                    |
+| status          | integer | null: false                    |
+| shipping_charge | integer | null: false                    |
+| shipping_area   | integer | null: false                    |
+| shipping_days   | integer | null: false                    |
+| price           | integer | null: false                    |
+| user_id         | integer | null: false, foreign_key: true |
 
 ### Association
 

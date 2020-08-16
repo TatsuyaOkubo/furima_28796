@@ -51,11 +51,11 @@ Things you may want to cover:
 | image           | text    | null: false |
 | product_name    | varchar | null: false |
 | description     | text    | null: false |
-| category        | varchar | null: false |
-| status          | varchar | null: false |
-| shipping_charge | varchar | null: false |
-| shipping_area   | varchar | null: false |
-| shipping_days   | date    | null: false |
+| category        | integer | null: false |
+| status          | integer | null: false |
+| shipping_charge | integer | null: false |
+| shipping_area   | integer | null: false |
+| shipping_days   | integer | null: false |
 | price           | integer | null: false |
 | user_id         | integer | null: false |
 

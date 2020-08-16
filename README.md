@@ -85,7 +85,7 @@ Things you may want to cover:
 | city         | string  | null: false                    |
 | block        | string  | null: false                    |
 | building     | string  | null: false                    |
-| phone_number | integer | null: false                    |
+| phone_number | string  | null: false                    |
 | purchase_id  | integer | null: false, foreign_key: true |
 
 ### Association

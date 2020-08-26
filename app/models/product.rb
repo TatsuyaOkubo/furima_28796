@@ -9,6 +9,8 @@ class Product < ApplicationRecord
   has_one_attached :image
 
   validates :image, :name, :description, :category, :status, :shipping_charge, :shipping_area, :shipping_day, :price, :user, presence: true
+  validates :name, length: { maximum: 40 }
+  validates :description, length: { maximum: 1000 }
   validates :price, inclusion: { in: (300..9999999)}
 
   #ジャンルの選択が「---」の時は保存できないようにする

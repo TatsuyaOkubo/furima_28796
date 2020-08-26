@@ -6,6 +6,7 @@ class Product < ApplicationRecord
   belongs_to_active_hash :shipping_area
   belongs_to_active_hash :shipping_day
   belongs_to :user
+  has_one_attached :image
 
   validates :image, :name, :description, :category, :status, :shipping_charge, :shipping_area, :shipping_day, :price, :user, presence: true
   validates :price, inclusion: { in: (300..9999999)}

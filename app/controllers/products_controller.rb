@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :move_to_index, except: [:index, :create]
 
   def index
-    @products = Product.order("created_at DESC")
+    @products = Product.order('created_at DESC')
   end
 
   def new
@@ -25,9 +25,6 @@ class ProductsController < ApplicationController
   end
 
   def move_to_index
-    unless user_signed_in?
-      redirect_to new_user_session_path
-    end
+    redirect_to new_user_session_path unless user_signed_in?
   end
-
 end

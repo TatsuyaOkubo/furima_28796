@@ -37,7 +37,7 @@ RSpec.describe Product, type: :model do
       it 'category_idが1だと出品できない' do
         @product.category_id = 1
         @product.valid?
-        expect(@product.errors.full_messages).to include("Category must be other than 1")
+        expect(@product.errors.full_messages).to include('Category must be other than 1')
       end
       it 'status_idが空だと出品できない' do
         @product.status_id = nil
@@ -47,7 +47,7 @@ RSpec.describe Product, type: :model do
       it 'status_idが1だと出品できない' do
         @product.status_id = 1
         @product.valid?
-        expect(@product.errors.full_messages).to include("Status must be other than 1")
+        expect(@product.errors.full_messages).to include('Status must be other than 1')
       end
       it 'shipping_charge_idが空だと出品できない' do
         @product.shipping_charge_id = nil
@@ -57,7 +57,7 @@ RSpec.describe Product, type: :model do
       it 'shipping_charge_idが1だと出品できない' do
         @product.shipping_charge_id = 1
         @product.valid?
-        expect(@product.errors.full_messages).to include("Shipping charge must be other than 1")
+        expect(@product.errors.full_messages).to include('Shipping charge must be other than 1')
       end
       it 'shipping_area_idが空だと出品できない' do
         @product.shipping_area_id = nil
@@ -67,7 +67,7 @@ RSpec.describe Product, type: :model do
       it 'shipping_area_idが1だと出品できない' do
         @product.shipping_area_id = 1
         @product.valid?
-        expect(@product.errors.full_messages).to include("Shipping area must be other than 1")
+        expect(@product.errors.full_messages).to include('Shipping area must be other than 1')
       end
       it 'shipping_day_idが空だと出品できない' do
         @product.shipping_day_id = nil
@@ -77,7 +77,7 @@ RSpec.describe Product, type: :model do
       it 'shipping_day_idが1だと出品できない' do
         @product.shipping_day_id = 1
         @product.valid?
-        expect(@product.errors.full_messages).to include("Shipping day must be other than 1")
+        expect(@product.errors.full_messages).to include('Shipping day must be other than 1')
       end
       it 'priceが空だと出品できない' do
         @product.price = nil

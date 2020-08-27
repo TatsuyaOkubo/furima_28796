@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :move_to_index, except: [:index, :create]
+  before_action :move_to_index, except: [:index, :create, :show]
 
   def index
     @products = Product.order('created_at DESC')
@@ -16,6 +16,10 @@ class ProductsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+
   end
 
   private

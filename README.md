@@ -47,7 +47,6 @@ Things you may want to cover:
 
 | Column          | Type    | Options                        |
 | --------------- | ------- | ------------------------------ |
-| image           | string  | null: false                    |
 | name            | string  | null: false                    |
 | description     | text    | null: false                    |
 | category        | integer | null: false                    |
@@ -74,9 +73,9 @@ Things you may want to cover:
 
 - belongs_to :user
 - belongs_to :product
-- has_one :delivery
+- has_one :receiver
 
-## deliveries テーブル
+## receivers テーブル
 
 | Column       | Type    | Options                        |
 | ------------ | ------- | ------------------------------ |

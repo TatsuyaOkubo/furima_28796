@@ -1,11 +1,11 @@
 class PurchasesController < ApplicationController
+  before_action :set_product, only: [:index, :create]
+  
   def index
-    @product = Product.find(params[:product_id])
   end
 
   def create
     @purchase = PurchaseReceiver.new(purchase_params)
-    @product = Product.find(params[:product_id])
     if @purchase.valid?
       pay_item
       @purchase.save
@@ -18,6 +18,10 @@ class PurchasesController < ApplicationController
   private
   def purchase_params
     params.permit(:token, :postcode, :prefecture_id, :city, :block, :building, :phone_number).merge(user_id: current_user.id, product_id: params[:product_id])
+  end
+
+  def set_product
+    @product = Product.find(params[:product_id])
   end
 
   def pay_item

@@ -1,6 +1,7 @@
 class PurchasesController < ApplicationController
   before_action :set_product, only: [:index, :create]
-
+  before_action :move_to_session
+  
   def index
   end
 
@@ -23,6 +24,10 @@ class PurchasesController < ApplicationController
 
   def set_product
     @product = Product.find(params[:product_id])
+  end
+
+  def move_to_session
+    redirect_to new_user_session_path unless user_signed_in?
   end
 
   def pay_item

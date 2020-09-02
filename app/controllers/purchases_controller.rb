@@ -3,6 +3,9 @@ class PurchasesController < ApplicationController
   before_action :move_to_session
   
   def index
+    if current_user.id == @product.user.id
+      redirect_to root_path
+    end
   end
 
   def create

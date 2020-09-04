@@ -5,8 +5,8 @@ class PurchaseReceiver
 
   with_options presence: true do
     validates :user_id, :product_id, :city, :block, :token
-    validates :postcode, format: { with: /\A\d{3}[-]\d{4}\z/, message: "is invalid. Input half-width characters."}
-    validates :phone_number, length: { maximum: 11 }, format: { with: /\A[0-9]+\z/, message: "is invalid. Input half-width numbers."}
+    validates :postcode, format: { with: /\A[0-9]{3}-[0-9]{4}\z/ }
+    validates :phone_number, format: { with: /\A\d{10}\z|\A\d{11}\z/ }
     validates :prefecture_id, numericality: { other_than: 1 }
   end
 

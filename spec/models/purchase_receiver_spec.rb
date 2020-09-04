@@ -8,10 +8,6 @@ RSpec.describe PurchaseReceiver, type: :model do
     it 'すべての値が正しく入力されていれば購入できること' do
       expect(@purchase).to be_valid
     end
-    it 'buildingが空でも購入できること' do
-      @purchase.building = nil
-      expect(@purchase).to be_valid
-    end
     it 'tokenが空だと購入できないこと' do
       @purchase.token = nil
       @purchase.valid?

@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :set_purchase, only: [:index, :show]
   before_action :set_product, only: [:edit, :show, :update, :destroy]
   before_action :move_to_session, except: [:index, :show]
   def index
@@ -35,7 +36,7 @@ class ProductsController < ApplicationController
   def destroy
     @product.destroy if current_user.id == @product.user.id
     redirect_to root_path
-end
+  end
 
   private
 
@@ -49,5 +50,9 @@ end
 
   def move_to_session
     redirect_to new_user_session_path unless user_signed_in?
+  end
+
+  def set_purchase
+    @purchase = Purchase.select('product_id')
   end
 end

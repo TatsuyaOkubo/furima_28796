@@ -1,11 +1,9 @@
 class PurchasesController < ApplicationController
   before_action :set_product, only: [:index, :create]
   before_action :move_to_session
-  
+
   def index
-    if current_user.id == @product.user.id
-      redirect_to root_path
-    end
+    redirect_to root_path if current_user.id == @product.user.id
     @purchase = PurchaseReceiver.new
   end
 
@@ -21,7 +19,7 @@ class PurchasesController < ApplicationController
   end
 
   private
-  
+
   def purchase_params
     params.permit(:token, :postcode, :prefecture_id, :city, :block, :building, :phone_number).merge(user_id: current_user.id, product_id: params[:product_id])
   end
@@ -35,11 +33,11 @@ class PurchasesController < ApplicationController
   end
 
   def pay_item
-    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+    Payjp.api_key = ENV['PAYJP_SECRET_KEY']
     Payjp::Charge.create(
       amount: @product[:price],
       card: purchase_params[:token],
-      currency:'jpy'
+      currency: 'jpy'
     )
   end
 end

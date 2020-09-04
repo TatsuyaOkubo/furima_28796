@@ -53,6 +53,6 @@ class ProductsController < ApplicationController
   end
 
   def set_purchase
-    @purchase = Purchase.select("product_id")
+    @purchase = Purchase.select('product_id')
   end
 end

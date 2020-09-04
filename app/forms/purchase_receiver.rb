@@ -1,5 +1,4 @@
 class PurchaseReceiver
-
   include ActiveModel::Model
   attr_accessor :user_id, :product_id, :postcode, :prefecture_id, :city, :block, :building, :phone_number, :purchase_id, :token
 

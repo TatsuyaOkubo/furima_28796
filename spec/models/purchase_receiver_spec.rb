@@ -23,14 +23,14 @@ RSpec.describe PurchaseReceiver, type: :model do
       expect(@purchase.errors.full_messages).to include("Postcode can't be blank")
     end
     it 'postcodeにハイフンがないと購入できないこと' do
-      @purchase.postcode = "1234567"
+      @purchase.postcode = '1234567'
       @purchase.valid?
-      expect(@purchase.errors.full_messages).to include("Postcode is invalid. Input half-width characters.")
+      expect(@purchase.errors.full_messages).to include('Postcode is invalid')
     end
     it 'prefecture_idが1だと購入できないこと' do
       @purchase.prefecture_id = 1
       @purchase.valid?
-      expect(@purchase.errors.full_messages).to include("Prefecture must be other than 1")
+      expect(@purchase.errors.full_messages).to include('Prefecture must be other than 1')
     end
     it 'cityが空だと購入できないこと' do
       @purchase.city = nil
@@ -50,12 +50,12 @@ RSpec.describe PurchaseReceiver, type: :model do
     it 'phone_numberにハイフンがあると購入できないこと' do
       @purchase.phone_number = '090-12345678'
       @purchase.valid?
-      expect(@purchase.errors.full_messages).to include("Phone number is invalid. Input half-width numbers.")
+      expect(@purchase.errors.full_messages).to include('Phone number is invalid')
     end
     it 'phone_numberが12桁以上であると購入できないこと' do
       @purchase.phone_number = '090123456789'
       @purchase.valid?
-      expect(@purchase.errors.full_messages).to include("Phone number is too long (maximum is 11 characters)")
+      expect(@purchase.errors.full_messages).to include('Phone number is invalid')
     end
   end
 end

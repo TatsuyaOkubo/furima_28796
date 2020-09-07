@@ -5,6 +5,9 @@ class PurchasesController < ApplicationController
   def index
     redirect_to root_path if current_user.id == @product.user.id
     @purchase = PurchaseReceiver.new
+    if Purchase.find_by(product_id: @product.id)
+      redirect_to root_path
+    end
   end
 
   def create

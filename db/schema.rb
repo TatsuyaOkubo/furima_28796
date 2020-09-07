@@ -34,22 +34,22 @@ ActiveRecord::Schema.define(version: 2020_08_30_140949) do
   end
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
-    t.integer "category_id"
-    t.integer "status_id"
-    t.integer "shipping_charge_id"
-    t.integer "shipping_area_id"
-    t.integer "shipping_day_id"
-    t.integer "price"
-    t.integer "user_id"
+    t.string "name", default: "", null: false
+    t.text "description", null: false
+    t.integer "category_id", null: false
+    t.integer "status_id", null: false
+    t.integer "shipping_charge_id", null: false
+    t.integer "shipping_area_id", null: false
+    t.integer "shipping_day_id", null: false
+    t.integer "price", null: false
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "purchases", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "product_id"
+    t.integer "user_id", null: false
+    t.integer "product_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -78,8 +78,8 @@ ActiveRecord::Schema.define(version: 2020_08_30_140949) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.datetime "created_at", precision: 6
-    t.datetime "updated_at", precision: 6
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
